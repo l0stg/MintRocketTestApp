@@ -26,10 +26,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        refreshLayout=findViewById(R.id.swipeRefreshLayout)
         initRecyclerView()
         createData()
-        refreshLayout.setOnRefreshListener{pullToRefresh()}
+        refreshLayout=findViewById(R.id.swipeRefreshLayout)
+        refreshLayout.setOnRefreshListener{
+            pullToRefresh()
+        }
     }
 
     fun pullToRefresh(){
@@ -46,7 +48,6 @@ class MainActivity : AppCompatActivity() {
             myAdapter= GitListAdapter()
             adapter=myAdapter
             pagination(layoutManager as LinearLayoutManager,recyclerView)
-
             val decoration = DividerItemDecoration(applicationContext, VERTICAL)
             addItemDecoration(decoration)
         }
