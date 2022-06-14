@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun pullToRefresh(){
+    fun pullToRefresh() {
         myAdapter.clearData()
         myAdapter.notifyDataSetChanged()
         gitViewModel.getRepos(1)
@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun initRecyclerView(){
+    fun initRecyclerView() {
         recyclerView.apply {
             layoutManager=LinearLayoutManager(applicationContext)
             myAdapter= GitListAdapter()
@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
             addItemDecoration(decoration)
         }
     }
-    fun pagination(mLayoutManager:LinearLayoutManager,mRecyclerView:RecyclerView){
+    fun pagination(mLayoutManager:LinearLayoutManager,mRecyclerView:RecyclerView) {
         var loading = true
         var pastVisiblesItems: Int
         var visibleItemCount: Int
@@ -76,14 +76,14 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    fun createData(){
+    fun createData() {
         gitViewModel=ViewModelProvider(this).get(GitViewModel::class.java)
         gitViewModel.getRecyclerListDataObserver().observe(this, Observer<GitModel> {
-            if(it !=null){
+            if(it !=null) {
                 myAdapter.setData(it.items)
                 myAdapter.notifyDataSetChanged()
 
-            }else{
+            }else {
                 Log.e("Error","Ошибка")
             }
         })
