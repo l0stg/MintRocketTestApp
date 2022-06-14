@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">GitApiApp</string>
+    <string name="repoName">[Repo Name]</string>
+    <string name="repoID">[repo ID]</string>
+    <string name="buttshare">Share</string>
+    <string name="repoOwnerName">[Owner]</string>
+    <string name="repoDesc">[Description]</string>
+    <string name="desc">Avatar User</string>
 </resources>

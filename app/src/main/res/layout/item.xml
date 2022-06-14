@@ -10,7 +10,7 @@
         android:id="@+id/tvRepoName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="[Repo Name]"
+        android:text="@string/repoName"
         android:textColor="@color/black"
         android:textSize="28sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,8 +20,8 @@
         android:id="@+id/tvRepoDesc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="[Repo Description]"
         android:maxLines="3"
+        android:text="@string/repoDesc"
         android:textColor="#3A3939"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvRepoName" />
@@ -34,7 +34,9 @@
         android:layout_marginTop="96dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tvRepoName"
-        tools:srcCompat="@drawable/ic_image" />
+        tools:srcCompat="@drawable/ic_image"
+        android:contentDescription="@string/desc"
+        />
 
     <TextView
         android:id="@+id/tvRepoOwner"
@@ -42,7 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
         android:layout_marginTop="108dp"
-        android:text="[Repo owner name]"
+        android:text="@string/repoOwnerName"
         android:textColor="@color/black"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="@+id/ivAvatar"
@@ -52,8 +54,8 @@
         android:id="@+id/tvID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="[ID]"
-        android:textColor="@color/design_default_color_secondary"
+        android:text="@string/repoID"
+        android:textColor="#00838F"
         app:layout_constraintBottom_toTopOf="@+id/tvRepoDesc"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.023"
@@ -66,7 +68,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="99dp"
-        android:text="share"
+        android:text="@string/buttshare"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.858"
