@@ -12,13 +12,12 @@ import coil.transform.CircleCropTransformation
 import kotlinx.android.synthetic.main.item.view.*
 
 
-public class GitListAdapter(): RecyclerView.Adapter<GitListAdapter.GitViewHolder>() {
+public class GitListAdapter(): RecyclerView.Adapter<GitListAdapter.GitViewHolder>(){
     var gitList= ArrayList<Items>()
 
     public fun clearData() {
         this.gitList.clear()
         Log.e("ТЭГС", "Очищаем массив")
-
     }
 
     fun setData(list: ArrayList<Items>) {
@@ -26,20 +25,20 @@ public class GitListAdapter(): RecyclerView.Adapter<GitListAdapter.GitViewHolder
     }
 
     class GitViewHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
-        val TvRepoName=itemView.tvRepoName
-        val TvRepoDesc=itemView.tvRepoDesc
-        val TvRepoOwner=itemView.tvRepoOwner
-        val TvID=itemView.tvID
-        val IvAvatar=itemView.ivAvatar
+        val TvRepoName = itemView.tvRepoName
+        val TvRepoDesc = itemView.tvRepoDesc
+        val TvRepoOwner = itemView.tvRepoOwner
+        val TvID = itemView.tvID
+        val IvAvatar = itemView.ivAvatar
         val sharebutt = itemView.sharebutt
         val context = itemView.context
         fun bind(data: Items){
-            TvRepoName.text=data.name
-            TvRepoDesc.text=data.description
-            TvID.text=data.id
-            TvRepoOwner.text=data.owner.login
-            val url=data.owner.avatar_url
-            IvAvatar.load(url){
+            TvRepoName.text = data.name
+            TvRepoDesc.text = data.description
+            TvID.text = data.id
+            TvRepoOwner.text = data.owner.login
+            val avatarUrl = data.owner.avatarUrl
+            IvAvatar.load(avatarUrl) {
                 crossfade(true)
                 placeholder(R.drawable.ic_image)
                 transformations(CircleCropTransformation())
@@ -70,10 +69,6 @@ public class GitListAdapter(): RecyclerView.Adapter<GitListAdapter.GitViewHolder
             intent.setData(Uri.parse(uris))
             context.startActivity(intent)
         })
-
-
-
     }
-
     override fun getItemCount(): Int = gitList.size
 }

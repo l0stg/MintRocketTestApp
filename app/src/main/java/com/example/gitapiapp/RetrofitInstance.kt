@@ -3,7 +3,7 @@ package com.example.gitapiapp
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class RetrofitInstance {
+class RetrofitInstance{
     companion object{
         fun getRetrofitInstance():Retrofit{
             var address= Address()

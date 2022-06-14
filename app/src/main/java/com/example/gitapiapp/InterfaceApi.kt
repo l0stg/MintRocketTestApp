@@ -8,9 +8,9 @@ import retrofit2.http.Query
 interface InterfaceApi {
     @GET("repositories")
     fun ApiGetReposResult(
-        @Query("q") q:String?,
-        @Query("sort") sortWith:String?,
-        @Query("order") order:String?,
-        @Query("page") page:Int?
+        @Query("q") q: String?,
+        @Query("sort") sortWith: String?,
+        @Query("order") order: String?,
+        @Query("page") page: Int?
     ):Call<GitModel>
 }

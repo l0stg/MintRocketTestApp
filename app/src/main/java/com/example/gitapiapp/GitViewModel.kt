@@ -8,7 +8,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class GitViewModel(application: Application):AndroidViewModel(application) {
+class GitViewModel(application: Application):AndroidViewModel(application){
     lateinit var mutableLiveData: MutableLiveData<GitModel>
     init {
         mutableLiveData= MutableLiveData()
@@ -22,13 +22,13 @@ class GitViewModel(application: Application):AndroidViewModel(application) {
         val call=retrofitInstance.ApiGetReposResult(address.q,address.sort,address.order,page)
 
         call.enqueue(object :Callback<GitModel>{
-            override fun onResponse(call: Call<GitModel>, response: Response<GitModel>) {
+            override fun onResponse(call: Call<GitModel>, response: Response<GitModel>){
                 Log.d("ТЭГС","ОК")
                 mutableLiveData.postValue(response.body())
 
             }
-            override fun onFailure(call: Call<GitModel>, t: Throwable) {
-                Log.e("ТЭГС","ОШИБКА ")
+            override fun onFailure(call: Call<GitModel>, t: Throwable){
+                Log.e("ТЭГС","ОШИБКА")
             }
 
         })

@@ -84,9 +84,10 @@ class MainActivity : AppCompatActivity() {
 
             }else{
                 Log.e("Error","Ошибка")
-
             }
         })
+
         gitViewModel.getRepos()
+
     }
 }
