@@ -23,7 +23,7 @@ class GitViewModel(application: Application):AndroidViewModel(application){
 
         call.enqueue(object :Callback<GitModel>{
             override fun onResponse(call: Call<GitModel>, response: Response<GitModel>){
-                Log.d("ТЭГС","ОК")
+                Log.d("ТЭГС","Получили ответ от айпи")
                 mutableLiveData.postValue(response.body())
 
             }

@@ -39,7 +39,6 @@ class MainActivity : AppCompatActivity() {
         myAdapter.notifyDataSetChanged()
         gitViewModel.getRepos(1)
         refreshLayout.isRefreshing=false
-
     }
 
     fun initRecyclerView() {
@@ -52,6 +51,7 @@ class MainActivity : AppCompatActivity() {
             addItemDecoration(decoration)
         }
     }
+    
     fun pagination(mLayoutManager:LinearLayoutManager,mRecyclerView:RecyclerView) {
         var loading = true
         var pastVisiblesItems: Int
@@ -89,6 +89,5 @@ class MainActivity : AppCompatActivity() {
         })
 
         gitViewModel.getRepos()
-
     }
 }

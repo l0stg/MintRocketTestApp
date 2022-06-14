@@ -17,7 +17,7 @@ public class GitListAdapter(): RecyclerView.Adapter<GitListAdapter.GitViewHolder
 
     public fun clearData() {
         this.gitList.clear()
-        Log.e("ТЭГС", "Очищаем массив")
+        Log.d("ТЭГС", "Очищаем массив")
     }
 
     fun setData(list: ArrayList<Items>) {
