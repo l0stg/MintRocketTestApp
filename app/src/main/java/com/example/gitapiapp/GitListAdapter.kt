@@ -17,11 +17,11 @@ public class GitListAdapter(): RecyclerView.Adapter<GitListAdapter.GitViewHolder
 
     public fun clearData() {
         this.gitList.clear()
-        Log.e("МАМАМАМАМ", "ВЫЗЫВАЕТСЯ ОЧИСТКА")
+        Log.e("ТЭГС", "Очищаем массив")
 
     }
 
-    fun setData(list: ArrayList<Items>){
+    fun setData(list: ArrayList<Items>) {
         this.gitList.addAll(list)
     }
 
@@ -59,14 +59,13 @@ public class GitListAdapter(): RecyclerView.Adapter<GitListAdapter.GitViewHolder
         holder.sharebutt.setOnClickListener(View.OnClickListener {
             var context = holder.context
             val intent = Intent(Intent.ACTION_SEND)
-            intent.putExtra(Intent.EXTRA_TEXT, gitList[position].html_url)
+            intent.putExtra(Intent.EXTRA_TEXT, gitList[position].htmlurl)
             intent.type = "text/plain"
-            context.startActivity(Intent.createChooser(intent, "Share Via"))
-            Log.e("Залупа", "Мейби бейби девочка с картинки ${gitList[position].name}")
+            context.startActivity(Intent.createChooser(intent, "Поделиться"))
         })
         holder.itemView.setOnClickListener(View.OnClickListener {
             var context = holder.context
-            val uris = gitList[position].html_url
+            val uris = gitList[position].htmlurl
             val intent = Intent(Intent.ACTION_VIEW)
             intent.setData(Uri.parse(uris))
             context.startActivity(intent)

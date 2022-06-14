@@ -1,6 +1,8 @@
 package com.example.gitapiapp
 
-data class GitModel (val items:ArrayList<Items>)
+import com.google.gson.annotations.SerializedName
+
+data class GitModel(val items:ArrayList<Items>)
 
 data class Items(
     val name:String,
@@ -8,7 +10,8 @@ data class Items(
     val description: String,
     val stargazers_count: Int,
     val id:String,
-    val html_url: String
+    @SerializedName("html_url")
+    val htmlurl: String
     )
 
 data class Owner(val login:String, val avatar_url:String)

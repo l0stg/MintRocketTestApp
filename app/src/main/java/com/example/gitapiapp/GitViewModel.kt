@@ -23,12 +23,12 @@ class GitViewModel(application: Application):AndroidViewModel(application) {
 
         call.enqueue(object :Callback<GitModel>{
             override fun onResponse(call: Call<GitModel>, response: Response<GitModel>) {
-                Log.d("Все ок","Бля буду ты красавчик")
+                Log.d("ТЭГС","ОК")
                 mutableLiveData.postValue(response.body())
-                Log.d("МАМА",response.body().toString())
+
             }
             override fun onFailure(call: Call<GitModel>, t: Throwable) {
-                Log.e("Ошибка","ОШИБКА ")
+                Log.e("ТЭГС","ОШИБКА ")
             }
 
         })
